@@ -78,7 +78,7 @@ const createMovieItem = (movie) => {
           <div class="skeleton-rate"></div>
           <div class="skeleton-title"></div>
           <p class="rate">
-            <img src="/images/star_empty.png" class="star"/><span>${movie.vote_average}</span>
+            <img src="./images/star_empty.png" class="star"/><span>${movie.vote_average}</span>
           </p>
           <strong>${movie.title}</strong>
         </div>
@@ -96,7 +96,7 @@ const createMovieItem = (movie) => {
   img.addEventListener(
     "error",
     () => {
-      img.src = "/images/no_image.png";
+      img.src = "./images/no_image.png";
       removeSkeleton();
     },
     { once: true }
@@ -128,7 +128,7 @@ const renderBanner = async (fristMovieData) => {
     /*html*/
     `
     <div class="rate">
-      <img src="/images/star_empty.png" class="star" />
+      <img src="./images/star_empty.png" class="star" />
       <span class="rate-value">${mostPopularMovie.vote_average}</span>
     </div>
     <div class="title">${mostPopularMovie.title}</div>
@@ -146,12 +146,12 @@ const replaceBanner = (header, searchKeyword) => {
     <div class="top-rated-container">
       <div class="header-top">
         <h1 class="logo">
-          <a href="/"><img src="/images/logo.png" alt="MovieList" /></a>
+          <a href="/"><img src="./images/logo.png" alt="MovieList" /></a>
         </h1>
         <div class="search-bar">
           <input type="text" class="search-input" placeholder="검색어를 입력하세요" />
           <button class="search-button">
-            <img src="/images/search_icon.png" alt="검색" class="search-icon" />
+            <img src="./images/search_icon.png" alt="검색" class="search-icon" />
           </button>
         </div>
       </div>
@@ -173,7 +173,7 @@ const renderSearchedMovies = async (searchKeyword, searchPageCount) => {
       /*html*/
       `
       <div id="no-result">
-        <img src="/images/planet_icon.png" alt="검색 결과 없음" class="no-result-icon" />
+        <img src="./images/planet_icon.png" alt="검색 결과 없음" class="no-result-icon" />
         <p class="no-result-text">검색 결과가 없습니다.</p>
       </div>`
     );
