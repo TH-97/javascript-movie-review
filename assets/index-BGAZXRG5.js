@@ -219,6 +219,8 @@ class App {
     this.#state.currentKeyword = document.querySelector(".search-input").value;
     const list = document.querySelector(".thumbnail-list");
     if (list) list.replaceChildren();
+    const loadMovieButton = document.querySelector("#load-movie-button");
+    if (loadMovieButton) loadMovieButton.style.display = "";
     const header = document.querySelector("#header");
     if (header) {
       header.replaceChildren();
@@ -247,7 +249,6 @@ class App {
     }
     if (this.#state.isSearched) {
       this.#state.searchPageCount += 1;
-      this.#state.currentKeyword = document.querySelector(".search-input").value;
       const totalSearchPages = await renderSearchedMovies(
         this.#state.currentKeyword,
         this.#state.searchPageCount
